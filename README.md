@@ -73,8 +73,3 @@ flowchart TD
     E --> F[🔎 Retrieve Relevant Chunks]
     F --> G[🤖 ChatGoogleGenerativeAI]
     G --> H[💬 Answer to User Question]
-
-
-
-📜 License
-MIT License. Feel free to fork and modify!
