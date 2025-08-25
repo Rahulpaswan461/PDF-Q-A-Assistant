@@ -7,12 +7,16 @@ import { RecursiveCharacterTextSplitter } from "langchain/text_splitter";
 import { Document } from "langchain/document";
 import readline from "readline";
 
+//parse the pdf content
 async function getPdfContent(pdfPath) {
     const dataBuffer = fs.readFileSync(pdfPath); // Remove 'utf8'
     const pdf = await pdfParse(dataBuffer);
     return pdf.text;
 }
 
+//perform the operation like : - creating chunks or text
+// spitting the pdf into chunks and storing them in 
+// in memory vector store
 
 async function allocateResources() {
     const pdfContent = await getPdfContent("./data/sample.pdf")
@@ -40,6 +44,7 @@ async function allocateResources() {
     return vectorStore.asRetriever();
 }
 
+//main function to call the model
 async function main(question) {
     const retriever = await allocateResources()
     const result = await retriever.getRelevantDocuments(question)
@@ -64,6 +69,7 @@ async function main(question) {
     console.log(response.content);
 }
 
+//function to execute the user query
 function executeUserQuery() {
   const rl = readline.createInterface({
     input: process.stdin,
@@ -81,7 +87,7 @@ function executeUserQuery() {
       }
     });
   }
-
+  
   askQuestion();
 }
 
