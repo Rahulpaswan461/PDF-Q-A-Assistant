@@ -23,31 +23,31 @@ This project lets you:
 ## 📂 Project Structure
 
 ├── data/
-│ └── sample.pdf # Sample PDF for testing
-├── index.js # Main code
-├── package.json
-├── .env # Environment variables (Google API Key)
-└── README.md
+  - │ └── sample.pdf # Sample PDF for testing
+  - ├── index.js # Main code
+  - ├── package.json
+  - ├── .env # Environment variables (Google API Key)
+  - └── README.md
 
 ## 🔧 Setup
 
 1. **Clone the repo**
    ```bash
-   git clone https://github.com/your-username/pdf-qa-assistant.git
+   git clone https://github.com/Rahulpaswan461/PDF-Q-A-Assistant
    cd pdf-qa-assistant
 
 2. Install dependencies
-   npm install
+    - npm install
 3. Set up environment variables
-  Create a .env file in the root of the project:
+    - Create a .env file in the root of the project:
+    - GOOGLE_API_KEY=your_google_genai_api_key
 
-   GOOGLE_API_KEY=your_google_genai_api_key
-4. Add a PDF to the data/ folder
-    /data/sample.pdf
+5. Add a PDF to the data/ folder
+   -  /data/sample.pdf
 
 ▶️ Usage
-Run the assistant:
-npm start
+ - Run the assistant:
+ - npm start
 
 
 ⚡ Tech Stack
@@ -57,7 +57,7 @@ npm start
  - pdf-parse – PDF text extraction
 
  🛠 Future Improvements
- - Support for multiple PDFs=
+ - Support for multiple PDFs
  - Persistent vector store (e.g., Pinecone, Weaviate, FAISS)
  - Web-based UI instead of CLI
  - Summarization mode
@@ -73,3 +73,6 @@ flowchart TD
     E --> F[🔎 Retrieve Relevant Chunks]
     F --> G[🤖 ChatGoogleGenerativeAI]
     G --> H[💬 Answer to User Question]
+
+📜 License
+MIT License. Feel free to fork and modify!
